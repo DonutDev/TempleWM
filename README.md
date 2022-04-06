@@ -1,2 +1,2 @@
 # TempleWM
-BSPWM TempleOS Rice (for linux)
+## BSPWM TempleOS Rice 
