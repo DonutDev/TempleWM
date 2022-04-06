@@ -1,0 +1,55 @@
+colors:
+  # Default colors
+  primary:
+    background: '0xfafafa'
+    foreground: '0x0000a8'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0xa80000'
+    green:   '0x00a800'
+    yellow:  '0xde935f'
+    blue:    '0x0000a8'
+    magenta: '0xa800a8'
+    cyan:    '0x00a8a8'
+    white:   '0xa8a8a8'
+
+  # Bright colors
+  bright:
+    black:   '0x575757'
+    red:     '0xcc6666'
+    green:   '0xb5bd68'
+    yellow:  '0xf0c674'
+    blue:    '0x81a2be'
+    magenta: '0xb294bb'
+    cyan:    '0x8abeb7'
+    white:   '0xffffff'
+# padding
+window:
+  padding:
+    x: 10
+    y: 10
+
+# Spread additional padding evenly around the terminal content.
+  dynamic_padding: true
+
+# Font configuration
+font:
+
+  normal:
+    family: "TempleOS"
+
+  bold:
+    family: "TempleOS"
+
+  italic:
+    family: "TempleOS"
+    style: "Regular"
+
+# Font size
+  size: 6
+
+  offset:
+    x: 0
+    y: 0
