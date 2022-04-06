@@ -1,0 +1,134 @@
+[global/wm]
+
+;---------------------------------------
+;	    INCLUDE FILES
+;---------------------------------------
+
+include-file = ~/.config/polybar/colors.ini
+
+;---------------------------------------
+;		GLOBAL
+;---------------------------------------
+
+[bar/bars]
+width = 100%
+height = 18
+
+tray-position = left
+tray-background = ${colors.bg}
+background = ${colors.bg}
+
+wm-restack = bspwm
+
+;---------------------------------------
+;		FONTS
+;---------------------------------------
+
+font-0 = TempleOS:style=Regular:size=7;2
+font-1 = TempleOS:style=Regular:size=5;2
+
+;---------------------------------------
+;	     MODULES LAYOUT
+;---------------------------------------
+
+modules-left = 
+modules-right = cpu separator pulseaudio separator date separator time 
+modules-center = xwindow 
+
+;---------------------------------------
+;          WORKSPACES MODULE
+;---------------------------------------
+[module/workspaces]
+type = internal/bspwm
+
+pin-workspaces = false
+enable-click = true
+enable-scroll = true
+
+format = <label-state> <label-mode>
+format-background = ${colors.fg}
+format-foreground = ${colors.bg}
+
+ws-icon-0 = 1;1
+ws-icon-1 = 2;2
+ws-icon-2 = 3;3
+ws-icon-3 = 4;4
+ws-icon-4 = 5;5
+ws-icon-5 = 6;6
+
+ws-icon-default = ♟
+
+;---------------------------------------
+;          XWINDOW MODULE
+;---------------------------------------
+[module/xwindow]
+type = internal/xwindow
+format = <label>
+format-padding = 1
+
+format-foreground = ${colors.yellow}
+
+label = %title%
+label-maxlen = 50
+
+;---------------------------------------
+;          CPU MODULE
+;---------------------------------------
+[module/cpu]
+type = internal/cpu
+
+interval = 0.5
+label = "%{F#ffff56}CPU %{F#fefefe}%percentage%%"
+
+format-padding = 1
+warn-percentage = 95
+;---------------------------------------
+;	   AUDIO MODULE
+;---------------------------------------
+[module/pulseaudio]
+type = internal/pulseaudio
+
+label-volume = " %{F#ffff56}VOL %{F#fefefe}%percentage%% "
+label-muted = " Muted "
+
+click-right = pavucontrol
+use-ui-max = false
+
+format-volume-foreground = ${colors.fg}
+format-muted-foreground = ${colors.fg}
+
+;---------------------------------------
+;	     TIME MODULE
+;---------------------------------------
+[module/time]
+type = internal/date
+time = %I:%M %p
+
+label = "%{F#ffff56}TIME %{F#fefefe}%time%"
+
+format-foreground = ${colors.fg}
+#format-background = ${colors.aqua}
+format-padding = 1
+
+;---------------------------------------
+;	     DATE MODULE
+;---------------------------------------
+[module/date]
+type = internal/date
+time = %d %b (%a)
+click-right = alacritty -c cal -y
+
+
+label = "%{F#ffff56}CAL %{F#fefefe}%time%"
+
+format-foreground = ${colors.fg}
+#format-background = ${colors.aqua}
+format-padding = 1
+
+;---------------------------------------
+;	   SEPERATOR MODULE
+;---------------------------------------
+[module/separator]
+type = custom/text
+content = | 
+content-foreground = ${colors.fg}
